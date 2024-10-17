@@ -35,6 +35,12 @@ app.get('/submit', (req, res) => {
     });
 });
 
+// Route to serve view.html
+app.get('/view', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'view.html'));
+});
+
+
 app.get('/submissions.json', (req, res) => {
     fs.readFile('submissions.json', (err, data) => {
         if (err) {
